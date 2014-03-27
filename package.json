@@ -1,0 +1,18 @@
+{
+  "name": "class",
+  "version": "0.0.0",
+  "description": "CoffeeScript's Class System",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "keywords": [
+    "class"
+  ],
+  "author": "Kaeli",
+  "license": "MIT",
+  "devDependencies": {
+    "chai": "^1.9.1",
+    "mocha": "^1.18.2"
+  }
+}
