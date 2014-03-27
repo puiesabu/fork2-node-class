@@ -4,4 +4,6 @@ module.exports = Class = (argv) ->
     constructor = ->
   else
     constructor = argv["initialize"]
+    for key of argv
+      constructor::[key] = argv[key]  if key isnt "initialize"
   constructor
