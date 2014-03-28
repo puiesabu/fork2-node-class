@@ -4,6 +4,9 @@ module.exports = Class = function(argv, parent) {
   if (typeof parent === "function") {
     constructor.prototype = new parent();
     constructor.prototype.constructor = constructor;
+    constructor.__super__ = parent;
+  } else {
+    constructor.__super__ = Object;
   }
 
   for (var key in argv) {
