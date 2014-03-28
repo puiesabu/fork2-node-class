@@ -9,8 +9,12 @@ module.exports = Class = function(argv, parent) {
     constructor.__super__ = Object;
   }
 
+  var current_class = constructor;
   constructor.prototype.super = function(fname) {
-    return constructor.__super__.prototype[fname].apply(this, Array.prototype.slice.apply(arguments, [1]));
+    current_class = current_class.__super__;
+    result = current_class.prototype[fname].apply(this, Array.prototype.slice.apply(arguments, [1]));
+    current_class = constructor;
+    return result;
   }
 
   for (var key in argv) {
